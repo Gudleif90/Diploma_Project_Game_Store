@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: "Poppins", sans-serif;
+}
+
+.modified-navbar {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 0;
+  width: 100%;
+}
+:where(.modified-navbar > *) {
+  display: inline-flex;
+  align-items: center;
+}
+
+.filter-list button div {
+  transition-property: background-color, border-color, color, fill, stroke;
+  transition-duration: 200ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.filter-list:hover button div {
+  transition-property: background-color, border-color, color, fill, stroke;
+  transition-duration: 200ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+button[data-testid="carousel-indicator"] {
+  background-color: #6218c9dd !important;
+  padding: 0.4rem;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+button[data-testid="carousel-indicator"]:hover {
+  background-color: #6218c9dd;
+  padding: 0.4rem;
+  border: 2px solid rgba(255, 255, 255, 0.85);
+  cursor: pointer;
+}
