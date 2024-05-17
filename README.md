@@ -1,52 +1,18 @@
-<h1 align="center">🎮 React Game Store</h1>
+Установка магазина видеоигр:
 
-<p align="center">
-    <img src="img/showcase_1.png" alt="showcase">
-</p>
-<p align=center>Built with React <img src="https://skillicons.dev/icons?i=react" width="16px"></p>
+1.	Для работы приложения на React, необходимо установить node.js, который можно найти по ссылке:
+https://nodejs.org/en
+2.	После установки Node.js, создайте папку, где вы будете хранить данный проект, например: C:\react-apps 
+3.	Клонируйте репозиторий из GitHub на ваш компьютер, написав команду в командной строке Windows:
+git clone https://github.com/Gudleif90/Diploma_Project_Game_Store.git
 
-## Description 📝
-
-<p>Game Store is a web application built with React for the frontend and Firebase for authentication and database management. It utilizes the RAWG API to fetch details of games such as release date, images, metacritic score and other relevant information.</p> 
-
-## Live Demo 🔴
-
-<p>You can view a live demo by clicking <a href="https://armadillidiid.github.io/react-game-store/">HERE</a></p>
-
-## Screenshots
-
-![](/img/showcase_5.png)
-![](/img/showcase_3.png)
-![](/img/showcase_4.png)
-
-## Built with
-
-- React
-- Tailwind
-- Firebase
-- Jest
-- Cypress
-- Framer Motion
-
-## Installation
-
-To run the application on your local machine, follow these steps:
-  1. Clone the repository to your local machine.
-
-```sh
-git clone https://github.com/Armadillidiid/react-game-store.git
-```
-
-2. Install the required dependencies.
-
-```sh
+4.	Откройте данный проект через Visual Studio Code или любую другую IDE. В случае с VS Code, нажмите на кнопку File, которая находится в левом верхнем углу, затем Open Folder, выберите папку, в которой было сохранено веб-приложение из GitHub.
+5.	После этого, откройте терминал, нажав на троеточие, затем Terminal > Open Terminal
+6.	  Установите все недостающие библиотеки и зависимости при помощи команды, которую нужно написать в терминале:
 npm install
-```
 
-3. [Create a RAWG account](https://rawg.io/apidocs) to get your API key.
-4. Set your API key by adding it to fetch queries.
-5. Run the project.
-
-```sh
+7.	Для успешного запуска проекта напишите данную команду в терминале:
 npm run dev
-```
+В результате, веб-приложение будет открыто автоматически в браузере.
+
+ 
