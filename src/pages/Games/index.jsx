@@ -44,9 +44,7 @@ const Games = () => {
     let ignore = false;
 
     const sendRequest = async () => {
-      const data = await fetchGames(
-        "https://api.rawg.io/api/games?page_size=40&key=da8b78f38c134484a249b5f177270923"
-      );
+         const data = await fetchGames(`${import.meta.env.VITE_GAMES_API_URL}/games`);
 
       if (!ignore) {
         dispatch({

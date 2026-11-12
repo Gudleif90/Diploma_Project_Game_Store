@@ -19,9 +19,9 @@ const Carousel = () => {
 
     const sendRequest = async () => {
       try {
-        const games = await fetchGames(
-          "https://api.rawg.io/api/games?page_size=40&key=da8b78f38c134484a249b5f177270923"
-        );
+  const games = await fetchGames(
+  `${import.meta.env.VITE_GAMES_API_URL}/games`
+);
         !ignore && dispatch({ type: "SET_GAMES", payload: games });
       } catch (err) {
         logger.debug(err);

@@ -1,3 +1,4 @@
+import { fetchGameDetails } from "../../utils/fetchGames";
 import { useQuery } from "@tanstack/react-query";
 import { Carousel } from "flowbite-react";
 import { useContext, useState } from "react";
@@ -24,28 +25,19 @@ const GameDetails = () => {
   const [toggle, setToggle] = useState(true);
 
   const { id } = useParams();
-  const url = `https://api.rawg.io/api/games/${id}?key=da8b78f38c134484a249b5f177270923`;
-
-  const sendRequest = async (url) => {
-    return await fetch(url).then((res) => res.json());
-  };
+  const url = `${import.meta.env.VITE_GAMES_API_URL}/games/${id}`;
 
   const { isLoading, isError, data } = useQuery({
-    queryKey: ["gameDetails"],
-    queryFn: () => sendRequest(url),
+    queryKey: ["gameDetails", id],
+    queryFn: () => fetchGameDetails(url),
   });
 
-  const {
-    isLoading: imagesIsLoading,
-    isError: imagesIsError,
-    data: dataImages,
-  } = useQuery({
-    queryKey: [`screenshot-${id}`],
-    queryFn: () =>
-      fetch(
-        `https://api.rawg.io/api/games/${id}/screenshots?key=da8b78f38c134484a249b5f177270923`
-      ).then((res) => res.json()),
-  });
+  
+  const imagesIsLoading = isLoading;
+  const imagesIsError = isError;
+  const dataImages = data && {
+    results: (data.screenshots || []).map((image) => ({ image })),
+  };
   logger.debug(dataImages);
 
   const obj = !isLoading &&
